@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+<!--       assignment 4-->
+
+<bean id="objdep" class="assignment4.Department">
+	
+	<property name="did" value="1"></property>
+	<property name="dname" value="software"></property>
+	
+</bean>
+
+<bean id="emp" class="assignment4.Employee" autowire="byName">
+	<property name="empid"    value="12"></property>
+	<property name="ename" value="dinesh"></property>
+	<property name="esalary" value="23000"></property>
+	<property name="objdep" ref="objdep"/>
+</bean>
+
+
+<!-- -assignment1 -->
+<bean id="que" class="assignment1.Role" factory-method="getObjV"/>
+
+<!-- -assignment2 -->
+<bean class ="assignment2.AVGno" id ="avgId">
+	<property name="num">
+		<list>
+			<value>90</value>	
+			<value>78</value>
+			<value>98</value>
+			<value>45</value>
+			<value>58</value>
+		</list>
+	</property>
+</bean>
+
+<!-- -assignment3 -->
+<bean id="que3" class="assignment3.Emi">
+	<property name="rate" value="3.5"></property>
+</bean>
+
+<!-- assignment5 -->
+<bean class="assignment5.FindMax" id="maxID">
+	<property  name="max">
+	<list>
+			<value>78</value>
+			<value>90</value>	
+			<value>78</value>
+			<value>98</value>
+			<value>45</value>
+			<value>58</value>
+	
+	</list>
+	</property>
+	</bean>
+
+<!-- assignment11 -->
+
+<bean id="result1" class="assignment11.Result">
+	<constructor-arg  value="56"></constructor-arg>
+	<constructor-arg  value="58"></constructor-arg>
+	<constructor-arg  value="89"></constructor-arg>
+	<constructor-arg  value="90"></constructor-arg>
+</bean>
+
+<bean id="student1" class="assignment11.Student">
+	<constructor-arg  value="dinesh"></constructor-arg>
+	<constructor-arg  value="1"></constructor-arg>
+	<constructor-arg  value="1998/06/25"></constructor-arg>
+	<constructor-arg  value="567"></constructor-arg>
+	<constructor-arg  value="0009"></constructor-arg>
+	<constructor-arg ref="result1"/>
+	
+</bean>
+ <bean id="result2" class="assignment11.Result">
+	<constructor-arg  value="56"></constructor-arg>
+	<constructor-arg  value="51"></constructor-arg>
+	<constructor-arg  value="81"></constructor-arg>
+	<constructor-arg  value="91"></constructor-arg>
+</bean>
+
+<bean id="student2" class="assignment11.Student">
+	<constructor-arg  value="dinesh"></constructor-arg>
+	<constructor-arg  value="2"></constructor-arg>
+	<constructor-arg  value="1999/06/2"></constructor-arg>
+	<constructor-arg  value="12"></constructor-arg>
+	<constructor-arg  value="001"></constructor-arg>
+	<constructor-arg ref="result2"/>
+	
+</bean>
+ 
+ <bean id="result3" class="assignment11.Result">
+	<constructor-arg  value="89"></constructor-arg>
+	<constructor-arg  value="55"></constructor-arg>
+	<constructor-arg  value="44"></constructor-arg>
+	<constructor-arg  value="94"></constructor-arg>
+</bean>
+
+<bean id="student3" class="assignment11.Student">
+	<constructor-arg  value="sumedha"></constructor-arg>
+	<constructor-arg  value="3"></constructor-arg>
+	<constructor-arg  value="1997/04/7"></constructor-arg>
+	<constructor-arg  value="11"></constructor-arg>
+	<constructor-arg  value="002"></constructor-arg>
+	<constructor-arg ref="result3"/>	
+</bean>
+
+<bean id="result4" class="assignment11.Result">
+	<constructor-arg  value="89"></constructor-arg>
+	<constructor-arg  value="55"></constructor-arg>
+	<constructor-arg  value="44"></constructor-arg>
+	<constructor-arg  value="94"></constructor-arg>
+</bean>
+
+<bean id="student4" class="assignment11.Student">
+	<constructor-arg  value="rakesh"></constructor-arg>
+	<constructor-arg  value="4"></constructor-arg>
+	<constructor-arg  value="1996/05/8"></constructor-arg>
+	<constructor-arg  value="12"></constructor-arg>
+	<constructor-arg  value="003"></constructor-arg>
+	<constructor-arg ref="result4"/>	
+</bean>
+
+<!-- assignment12 -->
+<bean id="emp1bean" class="assignment12.Employee">
+	<constructor-arg  value="elgoji"></constructor-arg>
+	<constructor-arg  value="25000"></constructor-arg>
+	<constructor-arg  value="11"></constructor-arg>
+	
+	<constructor-arg  value="java developer"></constructor-arg>
+	
+	
+	</bean>
+	<bean id="emp2bean" class="assignment12.Employee">
+	<constructor-arg  value="dineshhhhhhhhh"></constructor-arg>
+	<constructor-arg  value="250002"></constructor-arg>
+	<constructor-arg  value="101"></constructor-arg>
+	
+	<constructor-arg  value="java developer"></constructor-arg>
+	
+</bean>
+<bean id="que6" class="assignment6.Vowel">
+<property name="vm">
+<array>
+<value>dinesh</value>
+<value>dpsh</value>
+<value>mayur</value>
+
+</array>
+
+</property>
+		
+</bean>
+
+<!-- assignment7 -->
+<bean id="arraybean" class= "assignment7.Array1">
+		<constructor-arg>
+			<array>
+				<value>101</value>
+				<value>202</value>
+				<value>303</value>
+			</array>
+		</constructor-arg>
+	</bean>
+	<bean id="arraybean1" class="assignment7.Array">
+		<constructor-arg>
+			<array>
+				<value>67</value>
+				<value>89</value>
+				<value>400</value>
+			</array>
+		</constructor-arg>
+		<constructor-arg ref="arraybean"></constructor-arg>
+	</bean>
+<!-- assignment8 -->
+<bean id="itembean" class="assignment8.Item">
+<property 
+name="item">
+<list>
+
+<value>lappy</value>
+<value>bottel</value>
+<value>iphone</value>
+<value>iphone</value>
+<value>iphone</value>
+
+</list>
+</property>
+</bean>
+
+
+<!-- -assignment 9-->
+<bean id="citybean1"
+		class="assignment9.CityDistance">
+		<property name="fromcity" value="mumbai"></property>
+		<property name="tocity" value="bangalore"></property>
+		<property name="distance" value="992"></property>
+	</bean>
+
+	<bean id="citybean2"
+		class="assignment9.CityDistance">
+		<property name="fromcity" value="pune"></property>
+		<property name="tocity" value="kolhapur"></property>
+		<property name="distance" value="250"></property>
+	</bean>
+
+	<bean id="citybean3"
+		class="assignment9.CityDistance">
+		<property name="fromcity" value="pune"></property>
+		<property name="tocity" value="mumbai"></property>
+		<property name="distance" value="150"></property>
+	</bean>
+
+	<bean id="citybean4"
+		class="assignment9.CityDistance">
+		<property name="fromcity" value="indore"></property>
+		<property name="tocity" value="pune"></property>
+		<property name="distance" value="590"></property>
+	</bean>
+
+<!-- assignment10 -->
+
+<bean id="studbean" class="assignment10.Student">
+		<constructor-arg>
+			<map>
+				<entry key="dinesh" value="450"></entry>
+				<entry key="rajesh" value="470"></entry>
+				<entry key="ramana" value="389"></entry>
+				<entry key="pranita" value="299"></entry>
+				<entry key="yash" value="455"></entry>
+				<entry key="pooja" value="300"></entry>
+			</map>
+		</constructor-arg>
+	</bean>
+
+<!-- assignment13 -->
+<bean id="rating"
+        class="assignment13.movie">
+        <property name="moviename" value="kgf"></property>
+        <property name="showtime" value="5-7"></property>  
+        <property name="priceofticket" value="100"></property>
+        <property name="businessincrore" value="15 crore"></property>  
+    </bean>
+    
+
+<!-- -assignment14-->
+<bean class="assignment14.Circle" id="cirID">
+	<constructor-arg value="5"></constructor-arg>	
+</bean>
+
+<bean class="assignment14.Rectangle" id="recID">
+	<constructor-arg value="6"></constructor-arg>	
+	<constructor-arg value="8"></constructor-arg>	
+</bean>
+
+<bean class="assignment14.Square" id="SQUAREID">
+	<constructor-arg value="7"></constructor-arg>	
+</bean>
+
+    <!-- assignment15 
+
+<bean class="assignment15.Category" id="catID">
+<property name="catid" value="101"/>
+<property name="catname" value="Britannia"/>
+</bean>
+
+<bean class="assignment15.Item" id="ItemID">
+<property name="id" value="201"/>
+<property name="iname" value="Dark Fantasy"/>
+<property name="noi" value="5"/>
+<property name="iprice" value="90"/>
+<property name="category" ref="catID"/>
+
+</bean>
+<bean class="assignment15.Customer" id="custID">
+<property name="custid" value="501"/>
+<property name="custname" value="Subrat Devnath"/>
+<property name="item" ref="ItemID"/>
+
+</bean>     -->
+</beans>
